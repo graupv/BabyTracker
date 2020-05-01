@@ -47,6 +47,7 @@ class EventViewSet(viewsets.ModelViewSet):
             raise PermissionDenied('Wrong baby')
         else:
             event = serializer.save()
+            #   asociar permisos de evento/bebe y usuario/parent
             assign_perm('events.change_event', user, event)
             assign_perm('events.view_event', user, event)
             return Response(serializer.data)

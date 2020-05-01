@@ -49,6 +49,7 @@ class BabyViewSet(viewsets.ModelViewSet):
             raise PermissionDenied('Unauthenticated')
         else:
             baby = serializer.save()
+            #   asociar bebe con usuario y sus permisos
             assign_perm('baby.change_baby', user, baby)
             assign_perm('baby.view_baby', user, baby)
             return Response(serializer.data)
