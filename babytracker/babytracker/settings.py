@@ -43,6 +43,11 @@ INSTALLED_APPS = [
     'guardian',
     'corsheaders',
 
+    'permissions.apps.PermissionsConfig',
+    'babies.apps.BabiesConfig',
+    'parents.apps.ParentsConfig',
+    'events.apps.EventsConfig',
+
 
 ]
 
