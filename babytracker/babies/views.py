@@ -54,7 +54,7 @@ class BabyViewSet(viewsets.ModelViewSet):
             assign_perm('baby.view_baby', user, baby)
             return Response(serializer.data)
 
-    # GET method
+    
     @action(detail=True, methods=['get'])
     def events(self, request, pk=None):
         baby = self.get_object()
